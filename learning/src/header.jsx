@@ -1,8 +1,15 @@
-export default function Header(){
-    return( <div>
+import React from "react"
+
+export default function Header(props){
+    return( <div className="student">
  <header>
-    <h1>My Website</h1>
+    
+    <nav>
+        <p>Name:{props.Fruits}</p>
+        <p1>Price: {props.Paisa} </p1>
+    </nav>
+    <hr />
  </header>
-    </div>
+ </div>
     )
 }
