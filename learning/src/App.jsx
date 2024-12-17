@@ -1,4 +1,5 @@
 import Header from "./header"
+import List from "./list"
 import UserGreeting from "./userGreeting"
 import './index.css'
 export default function App(){
@@ -7,6 +8,7 @@ export default function App(){
   <Header Fruits="Apple, Papaya" Paisa="500Rs" />
   <Header Fruits="Mango, Papaya" Paisa="400Rs" />
   <UserGreeting isloggedin ={true} />
+  <List />
 
     </div>
   )
