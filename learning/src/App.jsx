@@ -8,7 +8,7 @@ export default function App() {
     <div>
       <Header Fruits="Apple, Papaya" Paisa="500Rs" />
       <Header Fruits="Mango, Papaya" Paisa="400Rs" />
-      <UserGreeting isloggedin={true} />
+      <UserGreeting />
       <List />
       <Mycomponent />
     </div>
