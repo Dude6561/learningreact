@@ -3,6 +3,7 @@ import List from "./list";
 import UserGreeting from "./userGreeting";
 import "./index.css";
 import Mycomponent from "./Mycomponent";
+import Colorpicker from "./colorpicker";
 export default function App() {
   return (
     <div>
@@ -11,6 +12,7 @@ export default function App() {
       <UserGreeting />
       <List />
       <Mycomponent />
+      <Colorpicker />
     </div>
   );
 }
