@@ -9,7 +9,9 @@ export default function Colorpicker() {
   return (
     <div>
       <p>Color Picker</p>
-      <p>Color is : {color}</p>
+      <p class="rang" style={{ backgroundColor: color }}>
+        Color is : {color}
+      </p>
       <div>
         <input type="color" onChange={handleColorchange} />
       </div>
