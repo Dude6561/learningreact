@@ -4,6 +4,7 @@ import UserGreeting from "./userGreeting";
 import "./index.css";
 import Mycomponent from "./Mycomponent";
 import Colorpicker from "./colorpicker";
+import Yourcomponent from "./Yourcomponent";
 export default function App() {
   return (
     <div>
@@ -13,6 +14,7 @@ export default function App() {
       <List />
       <Mycomponent />
       <Colorpicker />
+      <Yourcomponent />
     </div>
   );
 }
