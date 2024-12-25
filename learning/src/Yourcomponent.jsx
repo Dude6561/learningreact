@@ -2,30 +2,44 @@ import { useState } from "react";
 import React from "react";
 
 export default function Yourcomponent() {
-  const [car, setCar] = useState({
-    year: 2024,
-    make: "Ford",
-    model: "Mustand",
-  });
+  const [cars, setCars] = useState([]);
+  const [carYear, setCarYear] = useState(new Date().getFullYear());
+  const [carMake, setCarMake] = useState("");
+  const [carModel, setCarModel] = useState("");
+
+  function handleAddCar() {
+    const newCar = { year: carYear, make: carMake, model: carModel };
+    setCars((c) => [...c, newCar]);
+  }
+  function handleRemoveCar(index) {
+    setCars((c) => c.filter((_, i) => i !== index));
+  }
   function handleYearChange(e) {
-    setCar((c) => ({ ...c, year: e.target.value }));
+    setCarYear(e.target.value);
   }
   function handleMakeChange(e) {
-    setCar((c) => ({ ...c, make: e.target.value }));
+    setCarMake(e.target.value);
   }
   function handleModelChange(e) {
-    setCar((c) => ({ ...c, model: e.target.value }));
+    setCarModel(e.target.value);
   }
   return (
     <div>
-      <p>
-        Your Favourite car is :{car.year},{car.make} {car.model}
-      </p>
-      <input type="Number" value={car.year} onChange={handleYearChange} />
+      <h2>List of car Objects</h2>
+      <ul>
+        {cars.map((car, index) => (
+          <li key={index} onClick={() => handleRemoveCar(index)}>
+            {car.year} {car.make} {car.model}
+          </li>
+        ))}
+      </ul>
+      <input type="number" value={carYear} onChange={handleYearChange} />
       <br />
-      <input type="text" value={car.make} onChange={handleMakeChange} /> <br />
-      <input type="text" value={car.model} onChange={handleModelChange} />{" "}
+      <input type="text" value={carMake} onChange={handleMakeChange} />
       <br />
+      <input type="text" value={carModel} onChange={handleModelChange} />
+      <br />
+      <button onClick={handleAddCar}>Add Car</button>
     </div>
   );
 }
