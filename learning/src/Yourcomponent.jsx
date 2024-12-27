@@ -9,10 +9,10 @@ export default function Yourcomponent() {
 
   function handleAddCar() {
     const newCar = { year: carYear, make: carMake, model: carModel };
-    setCars((c) => [...c, newCar]);
+    setCars((c) => [...c, newCar]); // ... is spread operator which saves previous value of cars and update with new one listed
   }
   function handleRemoveCar(index) {
-    setCars((c) => c.filter((_, i) => i !== index));
+    setCars((c) => c.filter((_, i) => i !== index)); // requries 2 prameter by default and filter according to true or false
   }
   function handleYearChange(e) {
     setCarYear(e.target.value);
